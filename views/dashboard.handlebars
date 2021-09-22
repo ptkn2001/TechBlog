@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="row">
+        <h2>Your current blog posts</h2>
+    </div>
+    {{#if blogs.length}}
+        {{#each blogs as |blog|}}
+        <div class="row blog">
+            <a href="/">Blog goes here!</a>
+        </div>
+        {{/each}}
+    {{/if}}
+    <script src="./js/profile.js"></script>
+</div>
