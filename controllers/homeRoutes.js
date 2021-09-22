@@ -4,7 +4,12 @@ const withAuth = require('../utils/auth');
 
 router.get('/', async(req, res) => {
     try {
-        const blogData = await Blog.findAll();
+        const blogData = await Blog.findAll({
+            include: [{
+                model: User,
+                attributes: ['name'],
+            }, ],
+        });
 
         // Serialize data so the template can read it
         const blogs = blogData.map((blog) => blog.get({ plain: true }));

@@ -1,7 +1,11 @@
 {{#each blogs as |blog| }}
-<div class="row">
+<div class="blog">
+    <div class="blog-header">
         <h2>{{blog.title}}</h2>
+        <p>posted by {{blog.user.name}} on {{format_date blog.date_created}}</p>
+    </div>
+    <div class="blog-content">
         <p>{{blog.blogtext}}</p>
-        <p>{{format_date blog.date_created}}</p>
+    </div>
 </div>
 {{/each}}

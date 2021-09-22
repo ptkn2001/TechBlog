@@ -1,5 +1,26 @@
 [{
-    "title": "Object-Relation Mapping",
-    "blogtext": "I have really loved learning about ORMs. It's really simplified the way I create queries in SQL!",
-    "user_id": "1"
-}]
+        "title": "Building Server-Side Application with Node.js",
+        "blogtext": "Write your own server-side applications to handle requests and ultimately to build your own APIs using Node.js",
+        "user_id": "1"
+    },
+    {
+        "title": "Express framework for Node.js",
+        "blogtext": "Express.js is a widely used Node.js framework, to handle different HTTP methods in an API route.",
+        "user_id": "2"
+    },
+    {
+        "title": "MySql for Full-Stack Developers",
+        "blogtext": "Storing and retrieving data quickly and efficiently makes MySql databases the foundation of full-stack web applications.",
+        "user_id": "1"
+    },
+    {
+        "title": "Object-Relational Mapping",
+        "blogtext": "Object-relational mapping (ORM) makes tasks more manageable by helping us to interact with databases using JavaScript.",
+        "user_id": "2"
+    },
+    {
+        "title": "Model-View-Controller (MVC)",
+        "blogtext": "MVC is an architectural pattern that structures a codebase in three distinct sections, according to a software design philosophy known as the separation of concerns.",
+        "user_id": "1"
+    }
+]
