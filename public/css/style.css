@@ -61,6 +61,38 @@ a:visited {
     margin: 20px;
 }
 
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-items: flex-start;
+    margin: 20px;
+}
+
+.form-group {
+    margin-top: 10px;
+}
+
+.login-header {
+    margin-left: 20px;
+}
+
+#email-login {
+    margin-left: 30px;
+}
+
+#name-signup,
+#email-signup {
+    margin-left: 30px;
+}
+
+.login-signup {
+    margin: 30px 0 0 20px;
+}
+
+.signup h2 {
+    margin-left: 20px;
+}
+
 header {
     text-align: center;
     background: var(--primary);
@@ -104,16 +136,6 @@ main {
 img {
     max-width: 100%;
     height: auto;
-}
-
-
-/* LAYOUT */
-
-.container {
-    display: flex;
-    flex-flow: column wrap;
-    align-content: flex-start;
-    align-items: center;
 }
 
 .justify-center {
