@@ -24,6 +24,10 @@ a {
     text-decoration: none;
 }
 
+a:hover {
+    background-color: var(--secondary);
+}
+
 a:visited {
     color: inherit;
 }
@@ -41,6 +45,11 @@ a:visited {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+}
+
+.blog-header-group {
+    display: flex;
+    flex-direction: row;
 }
 
 .blog-header h2 {
@@ -105,7 +114,6 @@ nav {
 }
 
 nav a {
-    color: var(--light);
     padding: 14px 20px;
     text-decoration: none;
     text-align: center;
