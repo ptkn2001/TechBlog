@@ -1,11 +1,23 @@
-{{#each blogs as |blog| }}
-<div class="blog">
-    <div class="blog-header">
-        <h2>{{blog.title}}</h2>
-        <p>posted by {{blog.user.name}} on {{format_date blog.date_created}}</p>
+<div class="home-page flex-column">
+    <div class="blog-welcome-text col-5 p-4">
+        <h6>Signup for a new account and start blogging away.  You can view existing blog with out logging in but you will need to login to create blogs or add comments to blog.</h6>
     </div>
-    <div class="blog-content">
-        <p>{{blog.blogtext}}</p>
+    <div class="blog-content col-6 p-2">
+        {{#each blogs as |blog| }}
+        <div class="blog card p-2">
+            <div class="blog-header card-body">
+                <h2 class="card-title">{{blog.title}}</h2>
+                <div class="d-flex flex-row justify-content-between">
+                    <p class="card-tex">posted by {{blog.user.name}} on {{format_date blog.date_created}}</p>
+                    <a href="" id="blog_details_link" blogid="{{blog.id}}" class="blog-details-link p-1">View blog details</a>
+                </div>
+            </div>
+            <div class="blog-content">
+                <p class="card-text ms-3">{{blog.blog_text}}</p>
+            </div>
+        </div>
+        {{/each}}
     </div>
 </div>
-{{/each}}
+
+<script src="/js/dashboard.js"></script>

@@ -1,1 +1,37 @@
-<p>Your blog goes here!</p>
+<div class="blogdetails-page flex-column">
+    <div class="blog-header col-5 p-2">
+        <h3 class="p-2">Blog Details</h3>
+    </div>
+    
+    <div class="blog-body flex-column col-5">
+        <div class="blog card">
+            <div class="card-body">
+                <h2 class="card-title">{{blog.title}}</h2>
+                <p class="card-text">posted by {{blog.user.name}} on {{format_date blog.date_created}}</p>
+                <p class="card-text">{{blog.blog_text}}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="comments-header col-5">
+        <h3 class="p-2">Comments</h3>
+    </div>
+
+    <div class="comment-body flex-column col-5">
+        {{#if logged_in}}
+        <a href="" id="add_a_new_comment" blogid="{{blog.id}}" class="flex-start p-4">+Add a new comment</a>
+        {{/if}}
+        {{#each comments as |comment| }}
+        <div class="blog card">
+            <div class="card-body">
+                <div class="d-flex flex-row justify-content-between">
+                    <p class="card-text">{{comment.comment_text}}</p>
+                    <p class="card-text">{{comment.user.name}} - {{format_date comment.date_created}}</p>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
+
+<script src="/js/blogdetails.js"></script>

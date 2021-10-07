@@ -34,8 +34,30 @@ router.get('/blog/:id', async(req, res) => {
 
         const blog = blogData.get({ plain: true });
 
+        const commentsData = await Comment.findAll({
+            where: {
+                blog_id: req.params.id,
+            },
+            include: [{
+                model: User,
+                attributes: ['name'],
+
+            }, ],
+            order: [
+                ['date_created', 'DESC']
+            ],
+        });
+
+        const comments = commentsData.map((comment) => comment.get({ plain: true }));
+
+
+        console.log(blog);
+        console.log(comments);
+
+
         res.render('blogdetails', {
-            ...blog,
+            blog,
+            comments,
             logged_in: req.session.logged_in
         });
     } catch (err) {
@@ -45,15 +67,22 @@ router.get('/blog/:id', async(req, res) => {
 
 router.get('/dashboard', withAuth, async(req, res) => {
     try {
-        const userData = await User.findByPk(req.session.user_id, {
-            attributes: { exclude: ['password'] },
-            include: [{ model: Blog }],
+        const blogData = await Blog.findAll({
+            where: {
+                user_id: req.session.user_id,
+            },
+            include: [{
+                model: User,
+                attributes: ['name'],
+            }, ],
         });
 
-        const user = userData.get({ plain: true });
+        // Serialize data so the template can read it
+        const blogs = blogData.map((blog) => blog.get({ plain: true }));
+
 
         res.render('dashboard', {
-            ...user,
+            blogs,
             logged_in: true
         });
     } catch (err) {
