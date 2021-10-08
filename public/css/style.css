@@ -11,10 +11,7 @@ a {
 
 a:hover {
     border-bottom: solid 1px purple;
-}
-
-a:visited {
-    color: inherit;
+    cursor: pointer;
 }
 
 .btn {
@@ -45,4 +42,12 @@ nav {
 .blog-details-link {
     border: solid 1px purple;
     border-radius: 1em;
+}
+
+.new-comment-form {
+    display: none;
+}
+
+.comment {
+    border-bottom: solid 1px purple;
 }

@@ -9,6 +9,9 @@ router.get('/', async(req, res) => {
                 model: User,
                 attributes: ['name'],
             }, ],
+            order: [
+                ['date_created', 'DESC']
+            ],
         });
 
         // Serialize data so the template can read it
@@ -50,11 +53,6 @@ router.get('/blog/:id', async(req, res) => {
 
         const comments = commentsData.map((comment) => comment.get({ plain: true }));
 
-
-        console.log(blog);
-        console.log(comments);
-
-
         res.render('blogdetails', {
             blog,
             comments,
@@ -75,6 +73,9 @@ router.get('/dashboard', withAuth, async(req, res) => {
                 model: User,
                 attributes: ['name'],
             }, ],
+            order: [
+                ['date_created', 'DESC']
+            ],
         });
 
         // Serialize data so the template can read it
@@ -97,6 +98,12 @@ router.get('/login', (req, res) => {
     }
 
     res.render('login');
+});
+
+router.get('/newblog', withAuth, (req, res) => {
+    res.render('newblog', {
+        logged_in: true
+    });
 });
 
 router.get('/signup', (req, res) => res.render('signup'));

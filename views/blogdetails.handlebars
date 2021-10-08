@@ -19,18 +19,26 @@
 
     <div class="comment-body flex-column col-5">
         {{#if logged_in}}
-        <a href="" id="add_a_new_comment" blogid="{{blog.id}}" class="flex-start p-4">+Add a new comment</a>
+        <a id="add_a_new_comment" blogid="{{blog.id}}" class="flex-start ms-2">+Add a new comment</a>
+        <div class="new-comment-form">
+            <input  type="text" id="new_comment_input" class="ms-2"></input>
+            <div class="new-comment-buttons">
+                <button class="add-comment ms-1" type="button" blogid="{{blog.id}}">OK</button>
+                <button class="cancel-comment" type="button">Cancel</button>
+            </div>
+        </div>
         {{/if}}
-        {{#each comments as |comment| }}
+        
         <div class="blog card">
             <div class="card-body">
-                <div class="d-flex flex-row justify-content-between">
+                {{#each comments as |comment| }}
+                <div class="comment d-flex flex-row justify-content-between p-1">
                     <p class="card-text">{{comment.comment_text}}</p>
                     <p class="card-text">{{comment.user.name}} - {{format_date comment.date_created}}</p>
                 </div>
+                {{/each}}
             </div>
         </div>
-        {{/each}}
     </div>
 </div>
 
