@@ -52,3 +52,7 @@ nav {
 .comment {
     border-bottom: solid 1px purple;
 }
+
+#new_comment_input {
+    width: 400px;
+}
