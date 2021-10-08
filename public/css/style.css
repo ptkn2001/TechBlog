@@ -2,7 +2,7 @@ body {
     font-family: Arial;
     margin: 0;
     padding: 0;
-    background-image: url('./img/background.jpg');
+    background-color: rgb(217, 243, 243)
 }
 
 a {
@@ -20,11 +20,12 @@ a:hover {
 
 header {
     Padding: 30px;
+    background-color: teal;
 }
 
 nav {
     padding: 10px;
-    background-color: rgb(184, 131, 233);
+    background-color: rgb(164, 196, 196)
 }
 
 .blog {
